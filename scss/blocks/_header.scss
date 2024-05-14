@@ -1,0 +1,221 @@
+.header {
+margin: 56px 0 160px 0;
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 117px 0 ;
+    }
+
+    &__nav-logo {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 36px;
+        color: rgb(0, 0, 0);
+    }
+
+    &__nav-list {
+        display: flex;
+        // gap: 60px ;
+        gap: clamp(0.625rem, -8.75rem + 19.53vw, 3.75rem);
+        // width: 542px;   //! work with it
+        padding: 0 15px;
+    }
+
+    &__list-item {
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 25.2px;
+        letter-spacing: 0.3px;
+    }
+
+    &__nav-link {
+        font-size: 14px;
+            font-weight: 700;
+            line-height: 19.6px;
+            color: rgb(248, 250, 252);
+            padding: 14px 56px;
+            border-radius: 8px;
+            background: rgb(236, 96, 93);
+            width: 170px;
+            text-transform: uppercase;
+    }
+
+    &__burger-button{
+        width: 40px;
+        height: 30px;
+        position: relative;
+        background-color: transparent;
+        display: none;
+        transition: all .4s ease-in-out;
+        &::before {
+                content: "";
+                width: 40px;
+                height: 4px;
+                background-color: black;
+                position: absolute;
+                display: flex;
+                border-radius: 2px;
+                top: 0;
+                transition: all .4s ease-in-out;
+            }
+        
+            &::after {
+                content: "";
+                width: 40px;
+                height: 4px;
+                background-color: black;
+                position: absolute;
+                display: flex;
+                border-radius: 2px;
+                bottom: 0;
+                transition: all .4s ease-in-out;
+            }
+        span{
+            display: flex;
+            width: 40px;
+            height: 4px;
+            background-color: black;
+            border-radius: 2px;
+            transition: all .28s ease-in-out;
+        }
+        &:focus{
+            span{
+                opacity: 0;
+            }
+            &::after{
+                    transform: rotate(-45deg);
+                    top: calc(50% - 1px);
+              
+                }
+            &::before{
+                    transform: rotate(45deg);
+                    top: calc(50% - 1px);
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        position: relative;
+        max-width: fit-content;
+    }
+
+    &__inner-subtext {
+        color: rgb(17, 24, 39);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: 0.3px;
+            position: relative;
+            max-width: 158px;;
+            &::after{
+                content: "";
+                width: 80px;
+                height: 6px ;
+                position: absolute;
+                top: 8px;
+                right: -95px;
+                border-radius: 10px;
+                background: rgb(236, 96, 93);
+            }
+    }
+
+    &__title {
+        max-width: 737px;
+            // font-size: 96px;
+            font-size: clamp(4.063rem, 3.182rem + 4.4vw, 6rem);
+            font-weight: 700;
+            // line-height: 110px;
+            line-height: clamp(4.375rem, 3.239rem + 5.68vw, 6.875rem);
+            letter-spacing: 0.5px;
+            span{
+                color: rgb(236, 96, 93);
+            }
+            text-shadow: 4px 4px 1px rgb(221, 205, 205);
+    }
+
+    &__subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 32px;
+            max-width: 417px;
+            span{
+                color: rgb(236, 96, 93);
+                font-weight: 700;
+            }
+    }
+
+    &__inner-button {
+        color: rgb(255, 255, 255);
+        max-width: 269px ;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            border-radius: 8px;
+            background: rgb(236, 96, 93);
+            padding: 20px 80px;
+    }
+    &__inner-review{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-width:320px ;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 35px;
+        box-shadow: 0px 20px 40px 0px rgba(254, 107, 87, 0.14);
+        background: #fff;
+        padding: 6px 26px 6px 16px ;
+        align-items: center;
+        img{
+            transform: rotate(13.30deg);
+            width: 20%;
+        }
+                display: none;
+    }
+    &__inner-review-inner{
+        padding-left: 8px;
+    }
+
+    &__inner-review-title {
+        color: rgb(82, 82, 91);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 25.2px;
+            margin: 0 0 7px;
+    }
+    
+    &__inner-review-mark {
+        color: rgb(82, 82, 91);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 25.2px;
+            &::before {
+                content: url(../images/header/Star.svg);
+                margin-right: 5px;
+            }
+            &::after {
+                content: "Reviews";
+                color: rgb(82, 82, 91);
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 25.2px;
+                    margin-left: 5px;
+            }
+    }
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 15px;
+    &__header{
+        background: url(../images/header/header.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+}
